@@ -4,6 +4,7 @@ import { MyHoldings } from "./_components";
 import type { NextPage } from "next";
 import { useAccount } from "wagmi";
 import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
+import AnimatedBackground from "~~/components/ui/AnimatedBackground";
 import { useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
 import { useNFTRange } from "~~/hooks/useNFTRange";
 import { notification } from "~~/utils/scaffold-eth";
@@ -70,7 +71,8 @@ const MyNFTs: NextPage = () => {
 
   return (
     <>
-      <div className="flex items-center flex-col pt-10">
+      <AnimatedBackground />
+      <div className="flex items-center flex-col pt-10 relative z-10">
         <div className="px-5">
           <h1 className="text-center mb-8">
             <span className="block text-4xl font-bold">My NFTs</span>
@@ -86,7 +88,9 @@ const MyNFTs: NextPage = () => {
           </button>
         )}
       </div>
-      <MyHoldings />
+      <div className="relative z-10">
+        <MyHoldings />
+      </div>
     </>
   );
 };
