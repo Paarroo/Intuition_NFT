@@ -72,23 +72,27 @@ const MyNFTs: NextPage = () => {
   return (
     <>
       <AnimatedBackground />
-      <div className="flex items-center flex-col pt-10 relative z-10">
-        <div className="px-5">
-          <h1 className="text-center mb-8">
-            <span className="block text-4xl font-bold">My NFTs</span>
+      <div className="flex items-center flex-col pt-6 sm:pt-8 lg:pt-10 relative z-10">
+        <div className="px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto">
+          <h1 className="text-center mb-6 sm:mb-8">
+            <span className="block text-3xl sm:text-4xl lg:text-5xl font-bold">My NFTs</span>
           </h1>
         </div>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center px-4 sm:px-6 mb-6 sm:mb-8">
         {!isConnected || isConnecting ? (
           <RainbowKitCustomConnectButton />
         ) : (
-          <button className="btn btn-secondary" onClick={handleMintItem} disabled={nftsLoading}>
+          <button
+            className="btn btn-secondary min-h-[48px] px-6 sm:px-8 text-sm sm:text-base"
+            onClick={handleMintItem}
+            disabled={nftsLoading}
+          >
             {nftsLoading ? "Loading NFTs..." : "Mint NFT"}
           </button>
         )}
       </div>
-      <div className="relative z-10">
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <MyHoldings />
       </div>
     </>
