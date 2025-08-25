@@ -2,6 +2,7 @@
 
 import type { NextPage } from "next";
 import { Address } from "~~/components/scaffold-eth";
+import AnimatedBackground from "~~/components/ui/AnimatedBackground";
 import { useScaffoldEventHistory } from "~~/hooks/scaffold-eth";
 
 const Transfers: NextPage = () => {
@@ -12,20 +13,24 @@ const Transfers: NextPage = () => {
 
   if (isLoading)
     return (
-      <div className="flex justify-center items-center mt-10">
-        <span className="loading loading-spinner loading-xl"></span>
-      </div>
+      <>
+        <AnimatedBackground />
+        <div className="flex justify-center items-center mt-10 relative z-10">
+          <span className="loading loading-spinner loading-xl"></span>
+        </div>
+      </>
     );
 
   return (
     <>
-      <div className="flex items-center flex-col flex-grow pt-10">
+      <AnimatedBackground />
+      <div className="flex items-center flex-col flex-grow pt-10 relative z-10">
         <div className="px-5">
           <h1 className="text-center mb-8">
             <span className="block text-4xl font-bold">All Transfers Events</span>
           </h1>
         </div>
-        <div className="overflow-x-auto shadow-lg">
+        <div className="overflow-x-auto shadow-lg relative z-10">
           <table className="table table-zebra w-full">
             <thead>
               <tr className="text-base-content">
