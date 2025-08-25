@@ -24,8 +24,10 @@ const Home: NextPage = () => {
             </span>
           </h1>
           <div className="flex justify-center items-center space-x-2 flex-col">
-            <p className="my-2 font-medium">Connected Address:</p>
-            <Address address={connectedAddress} />
+            <div className="glassmorphism rounded-xl px-6 py-4 mt-4">
+              <p className="my-2 font-medium text-center">Connected Address:</p>
+              <Address address={connectedAddress} />
+            </div>
           </div>
 
           <div className="flex items-center flex-col flex-grow mt-6 sm:mt-8">
@@ -35,13 +37,15 @@ const Home: NextPage = () => {
               </h1>
               <div className="flex flex-col items-center justify-center">
                 <div className="w-full max-w-2xl">
-                  <Image
-                    src="/hero.png"
-                    width="727"
-                    height="231"
-                    alt="challenge banner"
-                    className="w-full h-auto rounded-xl border-4 border-primary"
-                  />
+                  <div className="glassmorphism rounded-xl p-4">
+                    <Image
+                      src="/hero.png"
+                      width="727"
+                      height="231"
+                      alt="challenge banner"
+                      className="w-full h-auto rounded-xl border-4 border-primary"
+                    />
+                  </div>
                 </div>
                 <div className="max-w-3xl px-4 sm:px-6">
                   <p className="text-center text-sm sm:text-base lg:text-lg mt-6 sm:mt-8 leading-relaxed">
@@ -77,9 +81,9 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-        <div className="grow bg-base-300 w-full mt-8 sm:mt-12 lg:mt-16 px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12 relative z-10">
+        <div className="grow glassmorphism w-full mt-8 sm:mt-12 lg:mt-16 px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12 relative z-10">
           <div className="flex justify-center items-center gap-6 sm:gap-8 lg:gap-12 flex-col md:flex-row max-w-4xl mx-auto">
-            <div className="flex flex-col bg-base-100 px-6 sm:px-8 lg:px-10 py-6 sm:py-8 lg:py-10 text-center items-center w-full max-w-sm rounded-3xl shadow-lg hover:shadow-xl transition-shadow">
+            <div className="flex flex-col glassmorphism px-6 sm:px-8 lg:px-10 py-6 sm:py-8 lg:py-10 text-center items-center w-full max-w-sm rounded-3xl hover:bg-white/10 transition-all duration-300">
               <BugAntIcon className="h-8 w-8 fill-secondary mb-4" />
               <p className="text-sm sm:text-base leading-relaxed">
                 Tinker with your smart contract using the{" "}
@@ -89,7 +93,7 @@ const Home: NextPage = () => {
                 tab.
               </p>
             </div>
-            <div className="flex flex-col bg-base-100 px-6 sm:px-8 lg:px-10 py-6 sm:py-8 lg:py-10 text-center items-center w-full max-w-sm rounded-3xl shadow-lg hover:shadow-xl transition-shadow">
+            <div className="flex flex-col glassmorphism px-6 sm:px-8 lg:px-10 py-6 sm:py-8 lg:py-10 text-center items-center w-full max-w-sm rounded-3xl hover:bg-white/10 transition-all duration-300">
               <MagnifyingGlassIcon className="h-8 w-8 fill-secondary mb-4" />
               <p className="text-sm sm:text-base leading-relaxed">
                 Explore your local transactions with the{" "}
