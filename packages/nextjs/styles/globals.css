@@ -15,7 +15,7 @@
   
   --color-primary: #ffffff;
   --color-primary-content: #000000;
-  --color-secondary: rgba(255, 255, 255, 0.2);
+  --color-secondary: rgba(255, 255, 255, 0.25);
   --color-secondary-content: #ffffff;
   --color-accent: #3b82f6;
   --color-accent-content: #ffffff;
@@ -75,6 +75,17 @@
   @apply shadow-md;
 }
 
+.btn.btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+}
+
+.btn.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.35) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
 .btn.btn-ghost {
   @apply shadow-none;
 }
@@ -126,7 +137,8 @@
 
 .glassmorphism-dropdown li > div,
 .glassmorphism-dropdown li > label,
-.glassmorphism-dropdown li > button {
+.glassmorphism-dropdown li > button,
+.glassmorphism-dropdown li > a {
   width: 100% !important;
   display: flex !important;
   align-items: center !important;
@@ -146,7 +158,8 @@
 
 .glassmorphism-dropdown li > div:hover,
 .glassmorphism-dropdown li > label:hover,
-.glassmorphism-dropdown li > button:hover {
+.glassmorphism-dropdown li > button:hover,
+.glassmorphism-dropdown li > a:hover {
   background-color: rgba(255, 255, 255, 0.5) !important;
 }
 
