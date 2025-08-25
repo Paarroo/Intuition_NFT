@@ -1,4 +1,4 @@
-import { Montserrat, Open_Sans, Space_Grotesk } from "next/font/google";
+import { Montserrat, Open_Sans } from "next/font/google";
 import "@rainbow-me/rainbowkit/styles.css";
 import { ScaffoldEthAppWithProviders } from "~~/components/ScaffoldEthAppWithProviders";
 import { ThemeProvider } from "~~/components/ThemeProvider";
@@ -19,11 +19,6 @@ const openSans = Open_Sans({
   weight: ["400", "500", "600"],
 });
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
-});
-
 export const metadata = getMetadata({
   title: "Simple NFT Example | SpeedRunEthereum",
   description: "Built with 🏗 Scaffold-ETH 2",
@@ -31,12 +26,9 @@ export const metadata = getMetadata({
 
 const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html
-      suppressHydrationWarning
-      className={`${montserrat.variable} ${openSans.variable} ${spaceGrotesk.variable} font-space-grotesk`}
-    >
+    <html suppressHydrationWarning className={`${montserrat.variable} ${openSans.variable}`}>
       <body>
-        <ThemeProvider enableSystem>
+        <ThemeProvider>
           <ScaffoldEthAppWithProviders>{children}</ScaffoldEthAppWithProviders>
         </ThemeProvider>
       </body>

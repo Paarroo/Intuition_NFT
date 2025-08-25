@@ -31,9 +31,6 @@
   --color-error: #ef4444;
 }
 
-
-
-
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
@@ -90,10 +87,7 @@
   opacity: 80%;
 }
 
-
-
 @theme inline {
-  --font-space-grotesk: var(--font-space-grotesk);
   --font-montserrat: var(--font-montserrat);
   --font-open-sans: var(--font-open-sans);
   --font-sans: var(--font-open-sans);

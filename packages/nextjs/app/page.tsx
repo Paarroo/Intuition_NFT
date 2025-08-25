@@ -81,28 +81,26 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-        <div className="grow glassmorphism w-full mt-8 sm:mt-12 lg:mt-16 px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12 relative z-10">
-          <div className="flex justify-center items-center gap-6 sm:gap-8 lg:gap-12 flex-col md:flex-row max-w-4xl mx-auto">
-            <div className="flex flex-col glassmorphism px-6 sm:px-8 lg:px-10 py-6 sm:py-8 lg:py-10 text-center items-center w-full max-w-sm rounded-3xl hover:bg-white/10 transition-all duration-300">
-              <BugAntIcon className="h-8 w-8 fill-secondary mb-4" />
-              <p className="text-sm sm:text-base leading-relaxed">
-                Tinker with your smart contract using the{" "}
-                <Link href="/debug" passHref className="link hover:text-primary transition-colors">
-                  Debug Contracts
-                </Link>{" "}
-                tab.
-              </p>
-            </div>
-            <div className="flex flex-col glassmorphism px-6 sm:px-8 lg:px-10 py-6 sm:py-8 lg:py-10 text-center items-center w-full max-w-sm rounded-3xl hover:bg-white/10 transition-all duration-300">
-              <MagnifyingGlassIcon className="h-8 w-8 fill-secondary mb-4" />
-              <p className="text-sm sm:text-base leading-relaxed">
-                Explore your local transactions with the{" "}
-                <Link href="/blockexplorer" passHref className="link hover:text-primary transition-colors">
-                  Block Explorer
-                </Link>{" "}
-                tab.
-              </p>
-            </div>
+        <div className="flex justify-center items-center gap-6 sm:gap-8 lg:gap-12 flex-col md:flex-row max-w-4xl mx-auto w-full mt-8 sm:mt-12 lg:mt-16 px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12 relative z-10">
+          <div className="flex flex-col glassmorphism px-6 sm:px-8 lg:px-10 py-6 sm:py-8 lg:py-10 text-center items-center w-full max-w-sm rounded-3xl hover:bg-white/10 transition-all duration-300">
+            <BugAntIcon className="h-8 w-8 fill-secondary mb-4" />
+            <p className="text-sm sm:text-base leading-relaxed">
+              Tinker with your smart contract using the{" "}
+              <Link href="/debug" passHref className="link hover:text-primary transition-colors">
+                Debug Contracts
+              </Link>{" "}
+              tab.
+            </p>
+          </div>
+          <div className="flex flex-col glassmorphism px-6 sm:px-8 lg:px-10 py-6 sm:py-8 lg:py-10 text-center items-center w-full max-w-sm rounded-3xl hover:bg-white/10 transition-all duration-300">
+            <MagnifyingGlassIcon className="h-8 w-8 fill-secondary mb-4" />
+            <p className="text-sm sm:text-base leading-relaxed">
+              Explore your local transactions with the{" "}
+              <Link href="/blockexplorer" passHref className="link hover:text-primary transition-colors">
+                Block Explorer
+              </Link>{" "}
+              tab.
+            </p>
           </div>
         </div>
       </div>
