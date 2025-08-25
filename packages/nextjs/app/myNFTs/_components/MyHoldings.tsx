@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { NFTCard } from "./NFTCard";
 import { useAccount } from "wagmi";
+import { GlassmorphismCard } from "~~/components/ui/GlassmorphismCard";
 import { useScaffoldContract, useScaffoldReadContract } from "~~/hooks/scaffold-eth";
 import { notification } from "~~/utils/scaffold-eth";
 import { getMetadataFromIPFS } from "~~/utils/simpleNFT/ipfs-fetch";
@@ -75,7 +76,10 @@ export const MyHoldings = () => {
   if (allCollectiblesLoading)
     return (
       <div className="flex justify-center items-center mt-10">
-        <span className="loading loading-spinner loading-lg"></span>
+        <GlassmorphismCard variant="default" size="lg">
+          <span className="loading loading-spinner loading-lg"></span>
+          <p className="mt-4 text-center">Loading your NFTs...</p>
+        </GlassmorphismCard>
       </div>
     );
 
@@ -83,10 +87,13 @@ export const MyHoldings = () => {
     <>
       {myAllCollectibles.length === 0 ? (
         <div className="flex justify-center items-center mt-10">
-          <div className="text-2xl text-primary-content">No NFTs found</div>
+          <GlassmorphismCard variant="default" size="lg" className="text-center">
+            <div className="text-2xl font-semibold mb-2">No NFTs found</div>
+            <p className="opacity-70">Mint your first NFT to get started!</p>
+          </GlassmorphismCard>
         </div>
       ) : (
-        <div className="flex flex-wrap gap-4 my-8 px-5 justify-center">
+        <div className="flex flex-wrap justify-around items-start gap-8 my-8 px-8">
           {myAllCollectibles.map(item => (
             <NFTCard nft={item} key={item.id} />
           ))}

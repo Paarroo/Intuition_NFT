@@ -5,6 +5,7 @@ import type { NextPage } from "next";
 import { useAccount } from "wagmi";
 import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 import AnimatedBackground from "~~/components/ui/AnimatedBackground";
+import { GlassmorphismCard } from "~~/components/ui/GlassmorphismCard";
 import { useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
 import { useNFTRange } from "~~/hooks/useNFTRange";
 import { notification } from "~~/utils/scaffold-eth";
@@ -72,23 +73,36 @@ const MyNFTs: NextPage = () => {
   return (
     <>
       <AnimatedBackground />
-      <div className="flex items-center flex-col pt-6 sm:pt-8 lg:pt-10 relative z-10">
+      <div className="flex items-center flex-col pt-12 sm:pt-16 lg:pt-20 relative z-10">
         <div className="px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto">
-          <h1 className="text-center mb-6 sm:mb-8">
-            <span className="block text-3xl sm:text-4xl lg:text-5xl font-bold">My NFTs</span>
+          <h1 className="text-center mb-8 sm:mb-10">
+            <span className="block text-4xl sm:text-5xl lg:text-6xl font-bold">My NFT Collection</span>
           </h1>
         </div>
       </div>
-      <div className="flex justify-center px-4 sm:px-6 mb-6 sm:mb-8">
+      <div className="flex justify-center px-4 sm:px-6 mb-8 sm:mb-10">
         {!isConnected || isConnecting ? (
-          <RainbowKitCustomConnectButton />
+          <GlassmorphismCard variant="default" size="md" className="text-center">
+            <p className="mb-4 text-lg font-semibold">Connect your wallet to view your NFTs</p>
+            <RainbowKitCustomConnectButton />
+          </GlassmorphismCard>
         ) : (
           <button
-            className="btn btn-secondary min-h-[48px] px-6 sm:px-8 text-sm sm:text-base"
+            className="btn btn-secondary btn-lg px-8 sm:px-12 text-base sm:text-lg rounded-full hover:scale-105 transition-transform duration-200 min-h-[56px]"
             onClick={handleMintItem}
             disabled={nftsLoading}
           >
-            {nftsLoading ? "Loading NFTs..." : "Mint NFT"}
+            {nftsLoading ? (
+              <>
+                <span className="loading loading-spinner loading-sm mr-2"></span>
+                Loading NFTs...
+              </>
+            ) : (
+              <>
+                <span className="text-xl mr-2">✨</span>
+                Mint New NFT
+              </>
+            )}
           </button>
         )}
       </div>
