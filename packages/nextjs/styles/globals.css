@@ -182,6 +182,10 @@
 
 @theme inline {
   --font-space-grotesk: var(--font-space-grotesk);
+  --font-montserrat: var(--font-montserrat);
+  --font-open-sans: var(--font-open-sans);
+  --font-sans: var(--font-open-sans);
+  --font-serif: var(--font-montserrat);
 }
 
 /* Glassmorphism Effects - builders-og style */
