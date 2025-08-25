@@ -2,6 +2,7 @@
 
 import { lazy, useEffect, useState } from "react";
 import type { NextPage } from "next";
+import AnimatedBackground from "~~/components/ui/AnimatedBackground";
 import { notification } from "~~/utils/scaffold-eth";
 import { addToIPFS } from "~~/utils/simpleNFT/ipfs-fetch";
 import nftsMetadata from "~~/utils/simpleNFT/nftsMetadata";
@@ -37,7 +38,8 @@ const IpfsUpload: NextPage = () => {
 
   return (
     <>
-      <div className="flex items-center flex-col flex-grow pt-10">
+      <AnimatedBackground />
+      <div className="flex items-center flex-col flex-grow pt-10 relative z-10">
         <h1 className="text-center mb-4">
           <span className="block text-4xl font-bold">Upload to IPFS</span>
         </h1>
