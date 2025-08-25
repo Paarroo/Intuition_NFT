@@ -6,13 +6,15 @@ import type { NextPage } from "next";
 import { useAccount } from "wagmi";
 import { BugAntIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { Address } from "~~/components/scaffold-eth";
+import AnimatedBackground from "~~/components/ui/AnimatedBackground";
 
 const Home: NextPage = () => {
   const { address: connectedAddress } = useAccount();
 
   return (
     <>
-      <div className="flex items-center flex-col grow pt-10">
+      <AnimatedBackground />
+      <div className="flex items-center flex-col grow pt-10 relative z-10">
         <div className="px-5">
           <h1 className="text-center">
             <span className="block text-2xl mb-2">Welcome to</span>
@@ -39,7 +41,7 @@ const Home: NextPage = () => {
                 />
                 <div className="max-w-3xl">
                   <p className="text-center text-lg mt-8">
-                    🎫 Create a simple NFT to learn basics of 🏗️ Scaffold-ETH 2. You'll use 👷‍♀️
+                    🎫 Create a simple NFT to learn basics of 🏗️ Scaffold-ETH 2. You&#39;ll use 👷‍♀️
                     <a
                       href="https://hardhat.org/getting-started/"
                       target="_blank"
@@ -48,8 +50,8 @@ const Home: NextPage = () => {
                     >
                       HardHat
                     </a>{" "}
-                    to compile and deploy smart contracts. Then, you'll use a template React app full of important
-                    Ethereum components and hooks. Finally, you'll deploy an NFT to a public network to share with
+                    to compile and deploy smart contracts. Then, you&#39;ll use a template React app full of important
+                    Ethereum components and hooks. Finally, you&#39;ll deploy an NFT to a public network to share with
                     friends! 🚀
                   </p>
                   <p className="text-center text-lg">
@@ -66,7 +68,7 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-        <div className="grow bg-base-300 w-full mt-16 px-8 py-12">
+        <div className="grow bg-base-300 w-full mt-16 px-8 py-12 relative z-10">
           <div className="flex justify-center items-center gap-12 flex-col md:flex-row">
             <div className="flex flex-col bg-base-100 px-10 py-10 text-center items-center max-w-xs rounded-3xl">
               <BugAntIcon className="h-8 w-8 fill-secondary" />
