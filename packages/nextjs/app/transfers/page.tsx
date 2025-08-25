@@ -15,8 +15,8 @@ const Transfers: NextPage = () => {
     return (
       <>
         <AnimatedBackground />
-        <div className="flex justify-center items-center mt-10 relative z-10">
-          <span className="loading loading-spinner loading-xl"></span>
+        <div className="flex justify-center items-center mt-8 sm:mt-10 lg:mt-12 relative z-10">
+          <span className="loading loading-spinner loading-lg sm:loading-xl"></span>
         </div>
       </>
     );
@@ -24,25 +24,25 @@ const Transfers: NextPage = () => {
   return (
     <>
       <AnimatedBackground />
-      <div className="flex items-center flex-col flex-grow pt-10 relative z-10">
-        <div className="px-5">
-          <h1 className="text-center mb-8">
-            <span className="block text-4xl font-bold">All Transfers Events</span>
+      <div className="flex items-center flex-col flex-grow pt-6 sm:pt-8 lg:pt-10 relative z-10">
+        <div className="px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto">
+          <h1 className="text-center mb-6 sm:mb-8">
+            <span className="block text-2xl sm:text-3xl lg:text-4xl font-bold">All Transfers Events</span>
           </h1>
         </div>
-        <div className="overflow-x-auto shadow-lg relative z-10">
-          <table className="table table-zebra w-full">
+        <div className="overflow-x-auto shadow-lg relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <table className="table table-zebra w-full min-w-[600px]">
             <thead>
               <tr className="text-base-content">
-                <th className="bg-primary">Token Id</th>
-                <th className="bg-primary">From</th>
-                <th className="bg-primary">To</th>
+                <th className="bg-primary text-sm sm:text-base px-2 sm:px-4">Token Id</th>
+                <th className="bg-primary text-sm sm:text-base px-2 sm:px-4">From</th>
+                <th className="bg-primary text-sm sm:text-base px-2 sm:px-4">To</th>
               </tr>
             </thead>
             <tbody>
               {!transferEvents || transferEvents.length === 0 ? (
                 <tr>
-                  <td colSpan={3} className="text-center">
+                  <td colSpan={3} className="text-center text-sm sm:text-base py-6">
                     No events found
                   </td>
                 </tr>
@@ -50,11 +50,13 @@ const Transfers: NextPage = () => {
                 transferEvents?.map((event, index) => {
                   return (
                     <tr key={index}>
-                      <th className="text-center">{event.args.tokenId?.toString()}</th>
-                      <td>
+                      <th className="text-center text-sm sm:text-base px-2 sm:px-4">
+                        {event.args.tokenId?.toString()}
+                      </th>
+                      <td className="px-2 sm:px-4">
                         <Address address={event.args.from} />
                       </td>
-                      <td>
+                      <td className="px-2 sm:px-4">
                         <Address address={event.args.to} />
                       </td>
                     </tr>
