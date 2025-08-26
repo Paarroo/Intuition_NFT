@@ -77,11 +77,11 @@ export const Header = () => {
   });
 
   return (
-    <div className="sticky lg:static top-0 navbar min-h-0 shrink-0 justify-between z-20 px-3 lg:px-4">
-      <div className="navbar-start w-auto lg:w-1/4">
+    <div className="sticky lg:static top-0 navbar min-h-[48px] sm:min-h-[52px] md:min-h-[60px] lg:min-h-[72px] shrink-0 justify-between z-20 px-1 sm:px-2 md:px-3 lg:px-4 overflow-hidden">
+      <div className="navbar-start w-auto lg:w-1/4 min-w-0 flex-shrink">
         <details className="dropdown" ref={burgerMenuRef}>
-          <summary className="btn btn-ghost lg:hidden hover:bg-transparent">
-            <Bars3Icon className="h-1/2" />
+          <summary className="btn btn-xs sm:btn-sm md:btn-md btn-ghost lg:hidden hover:bg-transparent px-1 sm:px-2 md:px-3 min-h-[32px] sm:min-h-[36px] md:min-h-[40px]">
+            <Bars3Icon className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 lg:h-1/2 lg:w-1/2" />
           </summary>
           <ul
             className="dropdown-content menu z-2 p-2 mt-2 glassmorphism-dropdown rounded-box w-52 gap-1"
@@ -95,9 +95,9 @@ export const Header = () => {
         <Link
           href="/myNFTs"
           passHref
-          className="flex items-center gap-3 ml-1 lg:ml-8 shrink-0 hover:opacity-80 transition-opacity duration-200"
+          className="flex items-center gap-1 sm:gap-2 lg:gap-3 ml-0 sm:ml-1 lg:ml-8 shrink-0 hover:opacity-80 transition-opacity duration-200"
         >
-          <div className="flex relative w-20 h-12 lg:w-32 lg:h-20">
+          <div className="flex relative w-14 h-9 sm:w-18 sm:h-11 md:w-22 md:h-14 lg:w-32 lg:h-20 z-10">
             <Image alt="Intuition logo" className="cursor-pointer" fill src="/logo.svg" />
           </div>
         </Link>
@@ -107,7 +107,7 @@ export const Header = () => {
           <HeaderMenuLinks />
         </ul>
       </div>
-      <div className="navbar-end w-auto lg:w-1/4 gap-2">
+      <div className="navbar-end w-auto lg:w-1/4 gap-1 sm:gap-2 min-w-0 flex-shrink">
         <RainbowKitCustomConnectButton />
         {isLocalNetwork && <FaucetButton />}
       </div>

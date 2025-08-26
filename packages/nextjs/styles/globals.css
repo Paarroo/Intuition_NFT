@@ -157,6 +157,163 @@
   text-align: left !important;
 }
 
+/* RainbowKit Mobile Responsive Overrides - Proportional Resize */
+
+/* Mobile S - Ultra-compact but all visible */
+@media (max-width: 480px) {
+  /* Navbar wallet section - compact layout */
+  .navbar-end {
+    min-width: auto !important;
+    flex-shrink: 1 !important;
+  }
+  
+  /* Balance button ultra-compact */
+  .navbar-end .flex.flex-col.items-center button {
+    min-height: 24px !important;
+    height: 24px !important;
+    padding: 2px 4px !important;
+    font-size: 0.6rem !important;
+    gap: 2px !important;
+  }
+  
+  /* Network text ultra-small */
+  .navbar-end .flex.flex-col.items-center span.text-xs {
+    font-size: 0.5rem !important;
+    line-height: 1 !important;
+  }
+  
+  /* Balance container more compact */
+  .navbar-end .flex.flex-col.items-center {
+    margin-right: 0.25rem !important;
+    gap: 1px !important;
+  }
+  
+  /* Avatar ultra-small */
+  .navbar-end img[alt*="avatar"] {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+  }
+  
+  /* Address text ultra-compact */
+  .navbar-end .text-sm.font-medium {
+    font-size: 0.6rem !important;
+    max-width: 40px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+  }
+  
+  /* Wallet button ultra-compact */
+  .navbar-end .btn.btn-secondary {
+    padding-left: 0.125rem !important;
+    padding-right: 0.25rem !important;
+    min-height: 28px !important;
+    height: 28px !important;
+    gap: 0.125rem !important;
+  }
+  
+  /* Dropdown arrow tiny */
+  .navbar-end .h-6.w-4 {
+    height: 8px !important;
+    width: 6px !important;
+  }
+}
+
+/* Mobile M - Compact but readable */
+@media (min-width: 481px) and (max-width: 640px) {
+  .navbar-end {
+    min-width: auto !important;
+    flex-shrink: 1 !important;
+  }
+  
+  /* Balance button compact */
+  .navbar-end .flex.flex-col.items-center button {
+    min-height: 28px !important;
+    height: 28px !important;
+    padding: 3px 6px !important;
+    font-size: 0.7rem !important;
+    gap: 3px !important;
+  }
+  
+  /* Network text small */
+  .navbar-end .flex.flex-col.items-center span.text-xs {
+    font-size: 0.65rem !important;
+  }
+  
+  /* Avatar small */
+  .navbar-end img[alt*="avatar"] {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    min-height: 20px !important;
+  }
+  
+  /* Address text compact */
+  .navbar-end .text-sm.font-medium {
+    font-size: 0.65rem !important;
+    max-width: 60px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+  }
+  
+  /* Wallet button compact */
+  .navbar-end .btn.btn-secondary {
+    padding-left: 0.25rem !important;
+    padding-right: 0.5rem !important;
+    min-height: 32px !important;
+    height: 32px !important;
+    gap: 0.25rem !important;
+  }
+  
+  /* Dropdown arrow small */
+  .navbar-end .h-6.w-4 {
+    height: 10px !important;
+    width: 6px !important;
+  }
+}
+
+/* Tablet - Smooth transition */
+@media (min-width: 641px) and (max-width: 768px) {
+  /* Balance slightly reduced */
+  .navbar-end .flex.flex-col.items-center button {
+    font-size: 0.8rem !important;
+    min-height: 30px !important;
+    height: 30px !important;
+    padding: 4px 8px !important;
+  }
+  
+  /* Network almost normal */
+  .navbar-end .flex.flex-col.items-center span.text-xs {
+    font-size: 0.75rem !important;
+  }
+  
+  /* Avatar almost normal */
+  .navbar-end img[alt*="avatar"] {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  
+  /* Address less truncated */
+  .navbar-end .text-sm.font-medium {
+    font-size: 0.75rem !important;
+    max-width: 80px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  
+  /* Wallet button almost normal */
+  .navbar-end .btn.btn-secondary {
+    min-height: 36px !important;
+    height: 36px !important;
+  }
+}
+
+
 .glassmorphism-dropdown li > div:hover,
 .glassmorphism-dropdown li > label:hover,
 .glassmorphism-dropdown li > button:hover,
