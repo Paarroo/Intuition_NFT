@@ -77,8 +77,10 @@ export const MyHoldings = () => {
     return (
       <div className="flex justify-center items-center mt-10">
         <GlassmorphismCard variant="default" size="lg">
-          <span className="loading loading-spinner loading-lg"></span>
-          <p className="mt-4 text-center">Loading your NFTs...</p>
+          <div className="text-center">
+            <span className="loading loading-spinner loading-lg"></span>
+            <p className="mt-4">Loading your NFTs...</p>
+          </div>
         </GlassmorphismCard>
       </div>
     );
@@ -93,7 +95,7 @@ export const MyHoldings = () => {
           </GlassmorphismCard>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 my-8 px-4 sm:px-6 lg:px-8 justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 my-12 px-4 sm:px-6 lg:px-8 justify-items-center">
           {myAllCollectibles.map(item => (
             <NFTCard nft={item} key={item.id} />
           ))}

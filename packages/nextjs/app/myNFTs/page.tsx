@@ -6,6 +6,7 @@ import { useAccount } from "wagmi";
 import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 import AnimatedBackground from "~~/components/ui/AnimatedBackground";
 import { GlassmorphismCard } from "~~/components/ui/GlassmorphismCard";
+import { RarityInfo } from "~~/components/ui/RarityInfo";
 import { useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
 import { useNFTRange } from "~~/hooks/useNFTRange";
 import { notification } from "~~/utils/scaffold-eth";
@@ -109,6 +110,10 @@ const MyNFTs: NextPage = () => {
         )}
       </div>
       <div className="relative z-10 px-3 sm:px-4 lg:px-6 xl:px-8 max-w-7xl mx-auto w-full">
+        {/* Rarity Information Section */}
+        <RarityInfo />
+
+        {/* NFT Holdings */}
         <MyHoldings />
       </div>
     </>

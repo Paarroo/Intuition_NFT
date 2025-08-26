@@ -25,6 +25,41 @@ if (isIpfs) {
   nextConfig.images = {
     unoptimized: true,
   };
+} else {
+  nextConfig.images = {
+    domains: ["localhost", "ipfs.io", "gateway.pinata.cloud", "cloudflare-ipfs.com", "assets.phosphor.xyz"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**.ipfs.io",
+      },
+      {
+        protocol: "https",
+        hostname: "**.pinata.cloud",
+      },
+      {
+        protocol: "https",
+        hostname: "**.cloudflare-ipfs.com",
+      },
+      {
+        protocol: "https",
+        hostname: "ipfs.io",
+      },
+      {
+        protocol: "https",
+        hostname: "assets.phosphor.xyz",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "3000",
+      },
+    ],
+    formats: ["image/webp", "image/avif"],
+    minimumCacheTTL: 60,
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  };
 }
 
 module.exports = nextConfig;
