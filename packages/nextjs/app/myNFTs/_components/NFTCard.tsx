@@ -10,14 +10,25 @@ export const NFTCard = ({ nft }: { nft: Collectible }) => {
   const { writeContractAsync } = useScaffoldWriteContract({ contractName: "YourCollectible" });
 
   return (
-    <GlassmorphismCard variant="default" className="w-[280px] max-w-[280px] flex flex-col" minHeight="600px">
+    <GlassmorphismCard
+      variant="default"
+      className="w-full max-w-[320px] sm:max-w-[280px] flex flex-col relative"
+      minHeight="600px"
+    >
+      {/* NFT ID badge positioned at card corner */}
+      <GlassmorphismCard
+        variant="default"
+        size="sm"
+        className="absolute top-2 left-2 opacity-75 scale-75 z-10"
+        hover={false}
+      >
+        <span className="text-white text-xs font-medium"># {nft.id}</span>
+      </GlassmorphismCard>
+
       {/* Image section */}
       <div className="relative">
         {/* eslint-disable-next-line  */}
         <img src={nft.image} alt="NFT Image" className="h-60 w-full object-cover" />
-        <GlassmorphismCard variant="default" size="sm" className="absolute bottom-4 left-4" hover={false}>
-          <span className="text-white text-sm font-medium"># {nft.id}</span>
-        </GlassmorphismCard>
       </div>
 
       {/* Content section */}

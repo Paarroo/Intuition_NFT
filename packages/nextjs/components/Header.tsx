@@ -77,10 +77,10 @@ export const Header = () => {
   });
 
   return (
-    <div className="sticky lg:static top-0 navbar min-h-0 shrink-0 justify-between z-20 px-0 sm:px-2">
+    <div className="sticky lg:static top-0 navbar min-h-0 shrink-0 justify-between z-20 px-3 lg:px-4">
       <div className="navbar-start w-auto lg:w-1/4">
         <details className="dropdown" ref={burgerMenuRef}>
-          <summary className="ml-1 btn btn-ghost lg:hidden hover:bg-transparent">
+          <summary className="btn btn-ghost lg:hidden hover:bg-transparent">
             <Bars3Icon className="h-1/2" />
           </summary>
           <ul
@@ -95,14 +95,10 @@ export const Header = () => {
         <Link
           href="/myNFTs"
           passHref
-          className="hidden lg:flex items-center gap-3 ml-4 shrink-0 hover:opacity-80 transition-opacity duration-200"
+          className="flex items-center gap-3 ml-1 lg:ml-8 shrink-0 hover:opacity-80 transition-opacity duration-200"
         >
-          <div className="flex relative w-10 h-10">
-            <Image alt="SE2 logo" className="cursor-pointer" fill src="/logo.svg" />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-bold leading-tight text-base">NFT Collection</span>
-            <span className="text-xs opacity-70">Scaffold-ETH 2</span>
+          <div className="flex relative w-20 h-12 lg:w-32 lg:h-20">
+            <Image alt="Intuition logo" className="cursor-pointer" fill src="/logo.svg" />
           </div>
         </Link>
       </div>
@@ -111,7 +107,7 @@ export const Header = () => {
           <HeaderMenuLinks />
         </ul>
       </div>
-      <div className="navbar-end w-auto lg:w-1/4 mr-2 lg:mr-4 gap-2">
+      <div className="navbar-end w-auto lg:w-1/4 gap-2">
         <RainbowKitCustomConnectButton />
         {isLocalNetwork && <FaucetButton />}
       </div>

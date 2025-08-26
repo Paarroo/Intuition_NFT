@@ -73,14 +73,16 @@ const MyNFTs: NextPage = () => {
   return (
     <>
       <AnimatedBackground />
-      <div className="flex items-center flex-col pt-12 sm:pt-16 lg:pt-20 relative z-10">
-        <div className="px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto">
-          <h1 className="text-center mb-8 sm:mb-10">
-            <span className="block text-4xl sm:text-5xl lg:text-6xl font-bold">My NFT Collection</span>
+      <div className="flex items-center flex-col pt-8 sm:pt-12 lg:pt-16 xl:pt-20 relative z-10">
+        <div className="px-3 sm:px-4 lg:px-6 xl:px-8 w-full max-w-7xl mx-auto">
+          <h1 className="text-center mb-6 sm:mb-8 lg:mb-10">
+            <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+              My NFT Collection
+            </span>
           </h1>
         </div>
       </div>
-      <div className="flex justify-center px-4 sm:px-6 mb-8 sm:mb-10">
+      <div className="flex justify-center px-3 sm:px-4 lg:px-6 mb-6 sm:mb-8 lg:mb-10">
         {!isConnected || isConnecting ? (
           <GlassmorphismCard variant="default" size="md" className="text-center">
             <p className="mb-4 text-lg font-semibold">Connect your wallet to view your NFTs</p>
@@ -88,7 +90,7 @@ const MyNFTs: NextPage = () => {
           </GlassmorphismCard>
         ) : (
           <button
-            className="btn btn-secondary btn-lg px-8 sm:px-12 text-base sm:text-lg rounded-full hover:scale-105 transition-transform duration-200 min-h-[56px]"
+            className="btn btn-secondary btn-sm sm:btn-md lg:btn-lg px-4 sm:px-8 lg:px-12 text-sm sm:text-base lg:text-lg rounded-full hover:scale-105 transition-transform duration-200 min-h-[48px] sm:min-h-[52px] lg:min-h-[56px] w-full sm:w-auto max-w-xs sm:max-w-none"
             onClick={handleMintItem}
             disabled={nftsLoading}
           >
@@ -106,7 +108,7 @@ const MyNFTs: NextPage = () => {
           </button>
         )}
       </div>
-      <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+      <div className="relative z-10 px-3 sm:px-4 lg:px-6 xl:px-8 max-w-7xl mx-auto w-full">
         <MyHoldings />
       </div>
     </>
