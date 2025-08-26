@@ -79,6 +79,7 @@
   border: 1px solid rgba(255, 255, 255, 0.3) !important;
   backdrop-filter: blur(6px) !important;
   -webkit-backdrop-filter: blur(6px) !important;
+  border-radius: 0.5rem !important;
 }
 
 .btn.btn-secondary:hover {

@@ -30,13 +30,13 @@ const Transfers: NextPage = () => {
             <span className="block text-2xl sm:text-3xl lg:text-4xl font-bold">All Transfers Events</span>
           </h1>
         </div>
-        <div className="overflow-x-auto shadow-lg relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="overflow-x-auto glassmorphism-card relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 rounded-2xl">
           <table className="table table-zebra w-full min-w-[600px]">
             <thead>
               <tr className="text-base-content">
-                <th className="bg-primary text-sm sm:text-base px-2 sm:px-4">Token Id</th>
-                <th className="bg-primary text-sm sm:text-base px-2 sm:px-4">From</th>
-                <th className="bg-primary text-sm sm:text-base px-2 sm:px-4">To</th>
+                <th className="glassmorphism text-white text-sm sm:text-base px-2 sm:px-4">Token Id</th>
+                <th className="glassmorphism text-white text-sm sm:text-base px-2 sm:px-4">From</th>
+                <th className="glassmorphism text-white text-sm sm:text-base px-2 sm:px-4">To</th>
               </tr>
             </thead>
             <tbody>
