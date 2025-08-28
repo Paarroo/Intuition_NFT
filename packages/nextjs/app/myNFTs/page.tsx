@@ -4,6 +4,9 @@ import { MyHoldings } from "./_components";
 import type { NextPage } from "next";
 import { useAccount } from "wagmi";
 import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
+import AnimatedBackground from "~~/components/ui/AnimatedBackground";
+import { GlassmorphismCard } from "~~/components/ui/GlassmorphismCard";
+import { RarityInfo } from "~~/components/ui/RarityInfo";
 import { useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
 import { useNFTRange } from "~~/hooks/useNFTRange";
 import { notification } from "~~/utils/scaffold-eth";
@@ -70,23 +73,49 @@ const MyNFTs: NextPage = () => {
 
   return (
     <>
-      <div className="flex items-center flex-col pt-10">
-        <div className="px-5">
-          <h1 className="text-center mb-8">
-            <span className="block text-4xl font-bold">My NFTs</span>
+      <AnimatedBackground />
+      <div className="flex items-center flex-col pt-8 sm:pt-12 lg:pt-16 xl:pt-20 relative z-10">
+        <div className="px-3 sm:px-4 lg:px-6 xl:px-8 w-full max-w-7xl mx-auto">
+          <h1 className="text-center mb-6 sm:mb-8 lg:mb-10">
+            <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+              My NFT Collection
+            </span>
           </h1>
         </div>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center px-3 sm:px-4 lg:px-6 mb-6 sm:mb-8 lg:mb-10">
         {!isConnected || isConnecting ? (
-          <RainbowKitCustomConnectButton />
+          <GlassmorphismCard variant="default" size="md" className="text-center">
+            <p className="mb-4 text-lg font-semibold">Connect your wallet to view your NFTs</p>
+            <RainbowKitCustomConnectButton />
+          </GlassmorphismCard>
         ) : (
-          <button className="btn btn-secondary" onClick={handleMintItem} disabled={nftsLoading}>
-            {nftsLoading ? "Loading NFTs..." : "Mint NFT"}
+          <button
+            className="btn btn-secondary btn-sm sm:btn-md lg:btn-lg px-4 sm:px-8 lg:px-12 text-sm sm:text-base lg:text-lg rounded-full hover:scale-105 transition-transform duration-200 min-h-[48px] sm:min-h-[52px] lg:min-h-[56px] w-full sm:w-auto max-w-xs sm:max-w-none"
+            onClick={handleMintItem}
+            disabled={nftsLoading}
+          >
+            {nftsLoading ? (
+              <>
+                <span className="loading loading-spinner loading-sm mr-2"></span>
+                Loading NFTs...
+              </>
+            ) : (
+              <>
+                <span className="text-xl mr-2">✨</span>
+                Mint New NFT
+              </>
+            )}
           </button>
         )}
       </div>
-      <MyHoldings />
+      <div className="relative z-10 px-3 sm:px-4 lg:px-6 xl:px-8 max-w-7xl mx-auto w-full">
+        {/* Rarity Information Section */}
+        <RarityInfo />
+
+        {/* NFT Holdings */}
+        <MyHoldings />
+      </div>
     </>
   );
 };

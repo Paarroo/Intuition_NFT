@@ -1,8 +1,5 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
-
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
   --shadow-center: 0 0 12px -2px rgb(0 0 0 / 0.05);
@@ -10,61 +7,28 @@
 }
 
 @plugin "daisyui" {
-  themes:
-    light,
-    dark --prefersdark;
+  themes: light;
 }
 
 @plugin "daisyui/theme" {
   name: "light";
-
-  --color-primary: #93bbfb;
-  --color-primary-content: #212638;
-  --color-secondary: #dae8ff;
-  --color-secondary-content: #212638;
-  --color-accent: #93bbfb;
-  --color-accent-content: #212638;
-  --color-neutral: #212638;
-  --color-neutral-content: #ffffff;
-  --color-base-100: #ffffff;
-  --color-base-200: #f4f8ff;
-  --color-base-300: #dae8ff;
-  --color-base-content: #212638;
-  --color-info: #93bbfb;
-  --color-success: #34eeb6;
-  --color-warning: #ffcf72;
-  --color-error: #ff8863;
-
-  --radius-field: 9999rem;
-  --radius-box: 1rem;
-  --tt-tailw: 6px;
-}
-
-@plugin "daisyui/theme" {
-  name: "dark";
-
-  --color-primary: #212638;
-  --color-primary-content: #f9fbff;
-  --color-secondary: #323f61;
-  --color-secondary-content: #f9fbff;
-  --color-accent: #4969a6;
-  --color-accent-content: #f9fbff;
-  --color-neutral: #f9fbff;
-  --color-neutral-content: #385183;
-  --color-base-100: #385183;
-  --color-base-200: #2a3655;
-  --color-base-300: #212638;
-  --color-base-content: #f9fbff;
-  --color-info: #385183;
-  --color-success: #34eeb6;
-  --color-warning: #ffcf72;
-  --color-error: #ff8863;
-
-  --radius-field: 9999rem;
-  --radius-box: 1rem;
-
-  --tt-tailw: 6px;
-  --tt-bg: var(--color-primary);
+  
+  --color-primary: #ffffff;
+  --color-primary-content: #000000;
+  --color-secondary: rgba(255, 255, 255, 0.25);
+  --color-secondary-content: #ffffff;
+  --color-accent: #3b82f6;
+  --color-accent-content: #ffffff;
+  --color-neutral: #ffffff;
+  --color-neutral-content: #000000;
+  --color-base-100: transparent;
+  --color-base-200: rgba(255, 255, 255, 0.05);
+  --color-base-300: rgba(255, 255, 255, 0.1);
+  --color-base-content: #ffffff;
+  --color-info: #0ea5e9;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
 }
 
 /*
@@ -84,12 +48,17 @@
     border-color: var(--color-gray-200, currentColor);
   }
 
+  html {
+    background-color: black;
+  }
+
   p {
     margin: 1rem 0;
   }
 
   body {
     min-height: 100vh;
+    background-color: black;
   }
 
   h1,
@@ -101,13 +70,21 @@
   }
 }
 
-:root,
-[data-theme] {
-  background: var(--color-base-200);
-}
 
 .btn {
   @apply shadow-md;
+}
+
+.btn.btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  border-radius: 0.5rem !important;
+}
+
+.btn.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.35) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
 }
 
 .btn.btn-ghost {
@@ -122,64 +99,828 @@
   opacity: 80%;
 }
 
-/* -- EXTENSION OVERRIDES -- */
-
-@plugin "daisyui/theme" {
-  name: "light";
-
-  --color-primary: #c8f5ff;
-  --color-primary-content: #026262;
-  --color-secondary: #89d7e9;
-  --color-secondary-content: #088484;
-  --color-accent: #026262;
-  --color-accent-content: #e9fbff;
-  --color-neutral: #088484;
-  --color-neutral-content: #f0fcff;
-  --color-base-100: #f0fcff;
-  --color-base-200: #e1faff;
-  --color-base-300: #c8f5ff;
-  --color-base-content: #088484;
-  --color-info: #026262;
-  --color-success: #34eeb6;
-  --color-warning: #ffcf72;
-  --color-error: #ff8863;
-
-  /* radius / button rounding */
-  --radius-field: 9999rem;
-  --radius-box: 1rem;
-
-  /* tooltip tail width */
-  --tt-tailw: 6px;
-}
-
-/* —— DARK THEME —— */
-@plugin "daisyui/theme" {
-  name: "dark";
-
-  --color-primary: #026262;
-  --color-primary-content: #c8f5ff;
-  --color-secondary: #107575;
-  --color-secondary-content: #e9fbff;
-  --color-accent: #c8f5ff;
-  --color-accent-content: #088484;
-  --color-neutral: #e9fbff;
-  --color-neutral-content: #11acac;
-  --color-base-100: #11acac;
-  --color-base-200: #088484;
-  --color-base-300: #026262;
-  --color-base-content: #e9fbff;
-  --color-info: #c8f5ff;
-  --color-success: #34eeb6;
-  --color-warning: #ffcf72;
-  --color-error: #ff8863;
-
-  --radius-field: 9999rem;
-  --radius-box: 1rem;
-
-  --tt-tailw: 6px;
-  --tt-bg: var(--color-primary); /* if you need a tooltip bg override */
-}
-
 @theme inline {
-  --font-space-grotesk: var(--font-space-grotesk);
+  --font-montserrat: var(--font-montserrat);
+  --font-open-sans: var(--font-open-sans);
+  --font-sans: var(--font-open-sans);
+  --font-serif: var(--font-montserrat);
+}
+
+/* Glassmorphism Effects - exact builders-og style */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.7px);
+  -webkit-backdrop-filter: blur(8.7px);
+}
+
+.glassmorphism-card {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glassmorphism-dropdown {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  padding: 8px 0 !important;
+  gap: 0 !important;
+}
+
+.glassmorphism-dropdown li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.glassmorphism-dropdown li > div,
+.glassmorphism-dropdown li > label,
+.glassmorphism-dropdown li > button,
+.glassmorphism-dropdown li > a {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 8px 16px !important;
+  font-size: 14px !important;
+  color: #374151 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  height: auto !important;
+  min-height: auto !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease-in-out !important;
+  text-align: left !important;
+}
+
+/* RainbowKit Mobile Responsive Overrides - Proportional Resize */
+
+/* Mobile S - Ultra-compact but all visible */
+@media (max-width: 480px) {
+  /* Navbar wallet section - compact layout */
+  .navbar-end {
+    min-width: auto !important;
+    flex-shrink: 1 !important;
+  }
+  
+  /* Balance button ultra-compact */
+  .navbar-end .flex.flex-col.items-center button {
+    min-height: 24px !important;
+    height: 24px !important;
+    padding: 2px 4px !important;
+    font-size: 0.6rem !important;
+    gap: 2px !important;
+  }
+  
+  /* Network text ultra-small */
+  .navbar-end .flex.flex-col.items-center span.text-xs {
+    font-size: 0.5rem !important;
+    line-height: 1 !important;
+  }
+  
+  /* Balance container more compact */
+  .navbar-end .flex.flex-col.items-center {
+    margin-right: 0.25rem !important;
+    gap: 1px !important;
+  }
+  
+  /* Avatar ultra-small */
+  .navbar-end img[alt*="avatar"] {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+  }
+  
+  /* Address text ultra-compact */
+  .navbar-end .text-sm.font-medium {
+    font-size: 0.6rem !important;
+    max-width: 40px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+  }
+  
+  /* Wallet button ultra-compact */
+  .navbar-end .btn.btn-secondary {
+    padding-left: 0.125rem !important;
+    padding-right: 0.25rem !important;
+    min-height: 28px !important;
+    height: 28px !important;
+    gap: 0.125rem !important;
+  }
+  
+  /* Dropdown arrow tiny */
+  .navbar-end .h-6.w-4 {
+    height: 8px !important;
+    width: 6px !important;
+  }
+}
+
+/* Mobile M - Compact but readable */
+@media (min-width: 481px) and (max-width: 640px) {
+  .navbar-end {
+    min-width: auto !important;
+    flex-shrink: 1 !important;
+  }
+  
+  /* Balance button compact */
+  .navbar-end .flex.flex-col.items-center button {
+    min-height: 28px !important;
+    height: 28px !important;
+    padding: 3px 6px !important;
+    font-size: 0.7rem !important;
+    gap: 3px !important;
+  }
+  
+  /* Network text small */
+  .navbar-end .flex.flex-col.items-center span.text-xs {
+    font-size: 0.65rem !important;
+  }
+  
+  /* Avatar small */
+  .navbar-end img[alt*="avatar"] {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    min-height: 20px !important;
+  }
+  
+  /* Address text compact */
+  .navbar-end .text-sm.font-medium {
+    font-size: 0.65rem !important;
+    max-width: 60px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+  }
+  
+  /* Wallet button compact */
+  .navbar-end .btn.btn-secondary {
+    padding-left: 0.25rem !important;
+    padding-right: 0.5rem !important;
+    min-height: 32px !important;
+    height: 32px !important;
+    gap: 0.25rem !important;
+  }
+  
+  /* Dropdown arrow small */
+  .navbar-end .h-6.w-4 {
+    height: 10px !important;
+    width: 6px !important;
+  }
+}
+
+/* Tablet - Smooth transition */
+@media (min-width: 641px) and (max-width: 768px) {
+  /* Balance slightly reduced */
+  .navbar-end .flex.flex-col.items-center button {
+    font-size: 0.8rem !important;
+    min-height: 30px !important;
+    height: 30px !important;
+    padding: 4px 8px !important;
+  }
+  
+  /* Network almost normal */
+  .navbar-end .flex.flex-col.items-center span.text-xs {
+    font-size: 0.75rem !important;
+  }
+  
+  /* Avatar almost normal */
+  .navbar-end img[alt*="avatar"] {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  
+  /* Address less truncated */
+  .navbar-end .text-sm.font-medium {
+    font-size: 0.75rem !important;
+    max-width: 80px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  
+  /* Wallet button almost normal */
+  .navbar-end .btn.btn-secondary {
+    min-height: 36px !important;
+    height: 36px !important;
+  }
+}
+
+/* NFT Rarity System - Glassmorphism Styles */
+
+/* Common Rarity - Subtle white glassmorphism */
+.glassmorphism-rarity-common {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #f8fafc;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Rare Rarity - Blue glassmorphism with subtle glow */
+.glassmorphism-rarity-rare {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.4);
+  color: #dbeafe;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.15);
+}
+
+
+/* Epic Rarity - Purple glassmorphism with moderate glow */
+.glassmorphism-rarity-epic {
+  background: rgba(147, 51, 234, 0.25);
+  border-color: rgba(147, 51, 234, 0.5);
+  color: #e9d5ff;
+  box-shadow: 0 0 12px rgba(147, 51, 234, 0.2);
+}
+
+
+/* Legendary Rarity - Gold glassmorphism with pulsing animation */
+.glassmorphism-rarity-legendary {
+  background: rgba(245, 158, 11, 0.25);
+  border-color: rgba(245, 158, 11, 0.6);
+  color: #fef3c7;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.25);
+}
+
+
+/* Mythic Rarity - Gradient with diamond sparkle effect */
+.glassmorphism-rarity-mythic {
+  background: linear-gradient(135deg, 
+    rgba(239, 68, 68, 0.25) 0%, 
+    rgba(147, 51, 234, 0.25) 50%,
+    rgba(59, 130, 246, 0.25) 100%);
+  border: 2px solid rgba(239, 68, 68, 0.6);
+  color: #fecaca;
+  box-shadow: 0 0 18px rgba(239, 68, 68, 0.2), 0 0 25px rgba(147, 51, 234, 0.1);
+}
+
+
+/* Rarity Animations */
+@keyframes golden-pulse {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.25);
+  }
+  50% { 
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.35);
+  }
+}
+
+@keyframes mythic-sparkle {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 1;
+    filter: hue-rotate(0deg);
+    box-shadow: 0 0 18px rgba(239, 68, 68, 0.2), 0 0 25px rgba(147, 51, 234, 0.1);
+  }
+  25% { 
+    transform: scale(1.03);
+    opacity: 0.95;
+    filter: hue-rotate(90deg);
+    box-shadow: 0 0 22px rgba(147, 51, 234, 0.25), 0 0 30px rgba(59, 130, 246, 0.15);
+  }
+  50% { 
+    transform: scale(1.05);
+    opacity: 0.9;
+    filter: hue-rotate(180deg);
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.25), 0 0 35px rgba(239, 68, 68, 0.15);
+  }
+  75% { 
+    transform: scale(1.02);
+    opacity: 0.95;
+    filter: hue-rotate(270deg);
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.2), 0 0 28px rgba(239, 68, 68, 0.1);
+  }
+}
+
+.animate-golden-pulse {
+  animation: golden-pulse 2s ease-in-out infinite;
+}
+
+.animate-mythic-sparkle {
+  animation: mythic-sparkle 3s ease-in-out infinite;
+}
+
+/* Hover effects for rarity badges */
+.glassmorphism-rarity-legendary:hover,
+.glassmorphism-rarity-mythic:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Enhanced hover effects for NFT cards */
+.nft-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nft-card-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* Micro-interactions */
+.button-pulse {
+  animation: button-pulse 2s infinite;
+}
+
+@keyframes button-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+  70% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+/* Success checkmark animation */
+@keyframes checkmark {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.success-checkmark {
+  animation: checkmark 0.6s ease-out;
+}
+
+/* Loading shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    rgba(255, 255, 255, 0.3) 50%, 
+    rgba(255, 255, 255, 0.1) 100%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Mobile responsive adjustments for rarity badges */
+@media (max-width: 640px) {
+  .glassmorphism-rarity-common,
+  .glassmorphism-rarity-rare,
+  .glassmorphism-rarity-epic,
+  .glassmorphism-rarity-legendary,
+  .glassmorphism-rarity-mythic {
+    font-size: 0.65rem;
+    padding: 0.125rem 0.375rem;
+  }
+}
+
+
+.glassmorphism-dropdown li > div:hover,
+.glassmorphism-dropdown li > label:hover,
+.glassmorphism-dropdown li > button:hover,
+.glassmorphism-dropdown li > a:hover {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.glassmorphism-dropdown .text-error,
+.glassmorphism-dropdown .menu-item.text-error {
+  color: #dc2626 !important;
+}
+
+.glassmorphism-dropdown .text-error:hover,
+.glassmorphism-dropdown .menu-item.text-error:hover {
+  background-color: rgba(254, 242, 242, 1) !important;
+}
+
+.glassmorphism-error {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.0px);
+  -webkit-backdrop-filter: blur(6.0px);
+}
+
+/* Utility classes for NFT cards */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===== ACCESSIBILITY STYLES ===== */
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* High contrast focus styles */
+@media (prefers-contrast: high) {
+  .glassmorphism, 
+  .glassmorphism-card,
+  .glassmorphism-transparent {
+    border: 2px solid white !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+  }
+  
+  .btn {
+    border: 2px solid white !important;
+    background: black !important;
+    color: white !important;
+  }
+}
+
+/* Focus styles for keyboard navigation */
+*:focus {
+  outline: 2px solid rgb(var(--color-primary));
+  outline-offset: 2px;
+}
+
+.glassmorphism:focus-within,
+.glassmorphism-card:focus-within {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .animate-pulse,
+  .animate-bounce,
+  .animate-spin,
+  .shimmer,
+  .button-pulse,
+  .animate-golden-pulse,
+  .animate-mythic-sparkle {
+    animation: none !important;
+  }
+  
+  .nft-card-hover:hover {
+    transform: none !important;
+  }
+}
+
+/* Skip link for keyboard navigation */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1000;
+  transition: top 0.3s;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Focus visible polyfill */
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+/* Better focus indicators for interactive elements */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Improved button accessibility */
+.btn:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Form field accessibility */
+.form-control:focus,
+.input:focus,
+.textarea:focus,
+.select:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.form-control:invalid,
+.input:invalid {
+  border-color: rgb(var(--color-error));
+  box-shadow: 0 0 0 2px rgba(var(--color-error), 0.2);
+}
+
+/* Error message styling */
+.error-message {
+  color: rgb(var(--color-error));
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.error-message::before {
+  content: "⚠️";
+  font-size: 0.75rem;
+}
+
+/* Loading state accessibility */
+.loading-state {
+  position: relative;
+}
+
+.loading-state::after {
+  content: "Loading...";
+  position: absolute;
+  left: -9999px;
+}
+
+/* Tooltip accessibility */
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]:hover::after,
+[data-tooltip]:focus-visible::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: 1000;
+  margin-bottom: 4px;
+}
+
+/* Announcement region styling */
+.announcement {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  z-index: 1000;
+  font-weight: 500;
+  max-width: 90vw;
+  text-align: center;
+}
+
+/* High contrast mode improvements */
+@media (prefers-contrast: high) {
+  .glassmorphism-rarity-common { background: #000 !important; color: #fff !important; border: 2px solid #fff !important; }
+  .glassmorphism-rarity-rare { background: #000 !important; color: #00ff00 !important; border: 2px solid #00ff00 !important; }
+  .glassmorphism-rarity-epic { background: #000 !important; color: #8000ff !important; border: 2px solid #8000ff !important; }
+  .glassmorphism-rarity-legendary { background: #000 !important; color: #ffff00 !important; border: 2px solid #ffff00 !important; }
+  .glassmorphism-rarity-mythic { background: #000 !important; color: #ff0080 !important; border: 2px solid #ff0080 !important; }
+}
+
+/* Print styles for accessibility */
+@media print {
+  .glassmorphism,
+  .glassmorphism-card {
+    background: white !important;
+    color: black !important;
+    border: 1px solid black !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+  
+  .skip-link {
+    display: none;
+  }
+}
+
+/* ===== TOAST/NOTIFICATION GLASSMORPHISM STYLES ===== */
+
+/* Apply glassmorphism to all toast/notification elements */
+.toast, 
+.alert, 
+.notification,
+.alert-success,
+.alert-error,
+.alert-warning,
+.alert-info,
+[data-theme] .alert,
+[data-theme] .toast {
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+  z-index: 9999 !important;
+  border-radius: 12px !important;
+  color: #ffffff !important;
+  font-weight: 500 !important;
+}
+
+/* Specific styles for different toast types */
+.alert-success {
+  background: rgba(16, 185, 129, 0.2) !important;
+  border-color: rgba(16, 185, 129, 0.4) !important;
+}
+
+.alert-error {
+  background: rgba(239, 68, 68, 0.2) !important;
+  border-color: rgba(239, 68, 68, 0.4) !important;
+}
+
+.alert-warning {
+  background: rgba(245, 158, 11, 0.2) !important;
+  border-color: rgba(245, 158, 11, 0.4) !important;
+}
+
+.alert-info {
+  background: rgba(59, 130, 246, 0.2) !important;
+  border-color: rgba(59, 130, 246, 0.4) !important;
+}
+
+/* Toast container positioning to avoid navbar */
+.toast-container,
+.alert-container {
+  top: 80px !important;
+  z-index: 9999 !important;
+}
+
+/* Ensure text is readable */
+.toast *,
+.alert *,
+.notification * {
+  color: inherit !important;
+}
+
+/* Loading/spinner toasts */
+.toast .loading,
+.alert .loading {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* ===== BURGER MENU Z-INDEX FIX ===== */
+
+/* Force burger menu dropdown to be above everything except notifications */
+.dropdown.dropdown-open .dropdown-content,
+.dropdown-content.menu {
+  z-index: 10000 !important;
+  position: relative !important;
+}
+
+/* Ensure dropdown content stays above all cards and other elements */
+.glassmorphism-dropdown {
+  z-index: 10000 !important;
+  position: relative !important;
+}
+
+/* ===== SCAFFOLD-ETH NOTIFICATION GLASSMORPHISM ===== */
+
+/* Target specific Scaffold-ETH notification popups */
+.bg-base-200.shadow-center.shadow-accent,
+.bg-base-200.rounded-xl.shadow-center,
+.bg-base-200[class*="shadow-center"],
+.bg-base-200[class*="shadow-accent"] {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+  z-index: 9999 !important;
+  color: #ffffff !important;
+}
+
+/* Ensure text inside Scaffold notifications is readable */
+.bg-base-200.shadow-center * {
+  color: #ffffff !important;
+}
+
+/* Loading spinner in Scaffold notifications */
+.bg-base-200.shadow-center .loading.loading-spinner {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Make sure the notification container is above navbar */
+div[class*="bg-base-200"][class*="shadow-center"] {
+  position: relative !important;
+  z-index: 9999 !important;
+}
+
+/* ===== COLORED SCAFFOLD NOTIFICATIONS ===== */
+
+/* Error/Failed notifications (red) */
+.bg-base-200.shadow-center:has(.text-error),
+.bg-base-200.shadow-center .text-error,
+.bg-base-200[class*="shadow-center"]:has(.text-error) {
+  background: rgba(239, 68, 68, 0.2) !important;
+  border-color: rgba(239, 68, 68, 0.4) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Success notifications (green) */
+.bg-base-200.shadow-center:has(.text-success),
+.bg-base-200.shadow-center .text-success,
+.bg-base-200[class*="shadow-center"]:has(.text-success) {
+  background: rgba(16, 185, 129, 0.2) !important;
+  border-color: rgba(16, 185, 129, 0.4) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+
+/* Warning notifications (yellow/orange) */
+.bg-base-200.shadow-center:has(.text-warning),
+.bg-base-200.shadow-center .text-warning,
+.bg-base-200[class*="shadow-center"]:has(.text-warning) {
+  background: rgba(245, 158, 11, 0.2) !important;
+  border-color: rgba(245, 158, 11, 0.4) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Info notifications (blue) */
+.bg-base-200.shadow-center:has(.text-info),
+.bg-base-200.shadow-center .text-info,
+.bg-base-200[class*="shadow-center"]:has(.text-info) {
+  background: rgba(59, 130, 246, 0.2) !important;
+  border-color: rgba(59, 130, 246, 0.4) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Alternative approach for older browsers that don't support :has() */
+.bg-base-200.shadow-center[data-type="error"],
+.bg-base-200.shadow-center[data-status="error"] {
+  background: rgba(239, 68, 68, 0.2) !important;
+  border-color: rgba(239, 68, 68, 0.4) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+.bg-base-200.shadow-center[data-type="success"],
+.bg-base-200.shadow-center[data-status="success"] {
+  background: rgba(16, 185, 129, 0.2) !important;
+  border-color: rgba(16, 185, 129, 0.4) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
 }
